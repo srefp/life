@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="45f203a6-209a-4c97-99da-d594fe646aa3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="application" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/life-ui" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\devenv\maven_repository" />
+        <option name="userSettingsFile" value="D:\devenv\maven_conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+  </component>
+  <component name="ProjectId" id="1rtTUUNikxO4WeBH4oM5n0mgmlh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../typora" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.life.task.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\codeRepo\LifeProjects\life\life-ui" />
+      <recent name="D:\codeRepo\LifeProjects\life\life-plan\src\main\java\com\life\task\filter" />
+      <recent name="D:\codeRepo\LifeProjects\life\life-plan\src\main\resources\assets" />
+      <recent name="D:\codeRepo\LifeProjects\life\life-plan\src\main\resources" />
+      <recent name="D:\codeRepo\LifeProjects\life\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\codeRepo\LifeProjects\life\life-task\src\main\resources" />
+      <recent name="D:\codeRepo\LifeProjects\life\src\main\resources\js" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.TaskApplication">
+    <configuration name="ControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="life-plan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.life.task.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.life.task.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.life.task.controller.ControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="life-plan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.life.task.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.life.task.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.life.task.controller.ControllerTest" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="life-plan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.life.task.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.life.task.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.life.task.controller.ControllerTest" />
+      <option name="METHOD_NAME" value="test4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="life-plan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.life.task.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.life.task" />
+      <option name="MAIN_CLASS_NAME" value="com.life.task.MyBatisTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="life-plan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.life.task.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.life.task.TaskApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.TaskApplication" />
+        <item itemvalue="JUnit.MyBatisTest.test" />
+        <item itemvalue="JUnit.ControllerTest" />
+        <item itemvalue="JUnit.ControllerTest.test4" />
+        <item itemvalue="JUnit.ControllerTest.test3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBootOptions">
+    <option name="showAdditionalConfigNotification" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45f203a6-209a-4c97-99da-d594fe646aa3" name="Default Changelist" comment="" />
+      <created>1619794401696</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619794401696</updated>
+      <workItem from="1619794403111" duration="1492000" />
+      <workItem from="1619857015097" duration="2994000" />
+      <workItem from="1619874549112" duration="838000" />
+      <workItem from="1619878463162" duration="3066000" />
+      <workItem from="1619925361183" duration="25000" />
+      <workItem from="1619930908477" duration="2402000" />
+      <workItem from="1619939180609" duration="1075000" />
+      <workItem from="1619942049415" duration="17000" />
+      <workItem from="1619942080315" duration="1382000" />
+      <workItem from="1619955884915" duration="11000" />
+      <workItem from="1620023494904" duration="40000" />
+      <workItem from="1620023561421" duration="477000" />
+      <workItem from="1620024056149" duration="216000" />
+      <workItem from="1620024379969" duration="92000" />
+      <workItem from="1620024733196" duration="304000" />
+      <workItem from="1620025051613" duration="637000" />
+      <workItem from="1620028814151" duration="82000" />
+      <workItem from="1620029425795" duration="152000" />
+      <workItem from="1620030130955" duration="63000" />
+      <workItem from="1620030490071" duration="469000" />
+      <workItem from="1620030974157" duration="493000" />
+      <workItem from="1620031484377" duration="280000" />
+      <workItem from="1620031777737" duration="726000" />
+      <workItem from="1620035064804" duration="1934000" />
+      <workItem from="1620089214337" duration="46000" />
+      <workItem from="1620091583832" duration="603000" />
+      <workItem from="1620192279264" duration="1730000" />
+      <workItem from="1620194691103" duration="315000" />
+      <workItem from="1620195888968" duration="4010000" />
+      <workItem from="1620208738167" duration="277000" />
+      <workItem from="1620209031027" duration="535000" />
+      <workItem from="1620219175406" duration="6277000" />
+      <workItem from="1620252993264" duration="605000" />
+      <workItem from="1620269425811" duration="2904000" />
+      <workItem from="1620303506237" duration="427000" />
+      <workItem from="1620304033323" duration="39000" />
+      <workItem from="1620304129970" duration="20000" />
+      <workItem from="1620304578869" duration="42000" />
+      <workItem from="1620304887326" duration="17000" />
+      <workItem from="1620304963905" duration="8000" />
+      <workItem from="1620305130985" duration="27000" />
+      <workItem from="1620305544337" duration="14000" />
+      <workItem from="1620305740379" duration="11000" />
+      <workItem from="1620306016418" duration="13000" />
+      <workItem from="1620306203195" duration="13000" />
+      <workItem from="1620306431993" duration="72000" />
+      <workItem from="1620306604731" duration="55000" />
+      <workItem from="1620307178887" duration="42000" />
+      <workItem from="1620307392710" duration="10000" />
+      <workItem from="1620307544760" duration="9000" />
+      <workItem from="1620308509042" duration="12000" />
+      <workItem from="1620457490634" duration="8618000" />
+      <workItem from="1620543772138" duration="6046000" />
+      <workItem from="1620664662580" duration="2550000" />
+      <workItem from="1620787109638" duration="182000" />
+      <workItem from="1620920447149" duration="936000" />
+      <workItem from="1620960915490" duration="13606000" />
+      <workItem from="1620999089839" duration="1259000" />
+      <workItem from="1621070062127" duration="297000" />
+      <workItem from="1621070380195" duration="151000" />
+      <workItem from="1621070548309" duration="104000" />
+      <workItem from="1621070668952" duration="66000" />
+      <workItem from="1621070753167" duration="1947000" />
+      <workItem from="1621091503211" duration="845000" />
+      <workItem from="1621136966521" duration="664000" />
+      <workItem from="1621137653117" duration="3828000" />
+      <workItem from="1621217742512" duration="6696000" />
+      <workItem from="1621249041306" duration="3336000" />
+      <workItem from="1621298957214" duration="178000" />
+      <workItem from="1621299149986" duration="1968000" />
+      <workItem from="1621314429600" duration="348000" />
+      <workItem from="1621314794964" duration="9328000" />
+      <workItem from="1621356602366" duration="96000" />
+      <workItem from="1621383518497" duration="543000" />
+      <workItem from="1621384079508" duration="374000" />
+      <workItem from="1621384471201" duration="232000" />
+      <workItem from="1621384718483" duration="431000" />
+      <workItem from="1621385281131" duration="123000" />
+      <workItem from="1621385682829" duration="10519000" />
+      <workItem from="1621414417216" duration="5722000" />
+      <workItem from="1621477432932" duration="8089000" />
+      <workItem from="1621507244749" duration="1252000" />
+      <workItem from="1621655086839" duration="3736000" />
+      <workItem from="1621730142192" duration="2079000" />
+      <workItem from="1621791038586" duration="46000" />
+      <workItem from="1622029608792" duration="6169000" />
+      <workItem from="1622045206569" duration="2123000" />
+      <workItem from="1622343184238" duration="9890000" />
+      <workItem from="1622425180504" duration="2930000" />
+      <workItem from="1622428934955" duration="10938000" />
+      <workItem from="1622510387479" duration="7545000" />
+      <workItem from="1622595481472" duration="1860000" />
+      <workItem from="1622622322082" duration="7000" />
+      <workItem from="1622622342583" duration="2998000" />
+      <workItem from="1622643325876" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/life-ui" />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.life.task.pojo.Task" memberName="children" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="expireSeconds" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

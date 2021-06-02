@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.life.task.mapper.BillMapper">
+
+    <resultMap type="com.life.task.pojo.Bill" id="BillResult">
+        <result property="id" column="id"/>
+        <result property="amount" column="amount"/>
+        <result property="content" column="content"/>
+        <result property="categoryId" column="category_id"/>
+        <result property="payTime" column="pay_time"/>
+        <result property="kind" column="kind"/>
+        <result property="userId" column="user_id"/>
+    </resultMap>
+
+    <sql id="where">
+        <where>
+            <if test="params.id != null">
+                and id = #{params.id}
+            </if>
+            <if test="params.amount != null">
+                and amount = #{params.amount}
+            </if>
+            <if test="params.content != null">
+                and content = #{params.content}
+            </if>
+            <if test="params.categoryId != null">
+                and category_id = #{params.categoryId}
+            </if>
+            <if test="params.payTime != null">
+                and pay_time = #{params.payTime}
+            </if>
+            <if test="params.kind != null">
+                and kind = #{params.kind}
+            </if>
+            <if test="params.userId != null">
+                and user_id = #{params.userId}
+            </if>
+        </where>
+    </sql>
+
+    <insert id="insertBatch"
+            parameterType="java.util.List">
+        insert into `bill`
+        (`id`,`amount`,`content`,`category_id`,`pay_time`,`kind`,`user_id`)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{bill.id},
+            #{bill.amount},
+            #{bill.content},
+            #{bill.categoryId},
+            #{bill.payTime},
+            #{bill.kind},
+            #{bill.userId}
+            )
+        </foreach>
+
+    </insert>
+
+    <select id="selectByParams" resultType="com.life.task.pojo.Bill"
+            resultMap="BillResult">
+        select id, amount, content, category_id, pay_time, kind, user_id
+        from bill t
+        <include refid="where"/>
+        order by pay_time
+    </select>
+
+    <select id="selectByParamsWithPage" resultType="com.life.task.pojo.Bill">
+        select id, amount, content, category_id, pay_time, kind, user_id
+        from bill t
+        <include refid="where"/>
+        limit #{offset}, #{pageSize}
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        select count(1)
+        from bill t
+        left join sys_user u
+        on u.id = t.user_id
+        <include refid="where"/>
+    </select>
+
+</mapper>
