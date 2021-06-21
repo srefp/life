@@ -1,8 +1,8 @@
 2021-05-18 20:40:23,680 [main] ERROR o.s.boot.SpringApplication -[SpringApplication.java:871]- Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobController' method 
-com.life.task.controller.JobController#cron(String)
+JobController#cron(String)
 to {GET [/job/job]}: There is already 'jobController' bean method
-com.life.task.controller.JobController#jobList() mapped.
+JobController#jobList() mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
@@ -20,11 +20,11 @@ com.life.task.controller.JobController#jobList() mapped.
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobController' method 
-com.life.task.controller.JobController#cron(String)
+JobController#cron(String)
 to {GET [/job/job]}: There is already 'jobController' bean method
-com.life.task.controller.JobController#jobList() mapped.
+JobController#jobList() mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328)
@@ -42,9 +42,9 @@ com.life.task.controller.JobController#jobList() mapped.
 	... 17 common frames omitted
 2021-05-18 20:41:57,191 [main] ERROR o.s.boot.SpringApplication -[SpringApplication.java:871]- Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobController' method 
-com.life.task.controller.JobController#jobList()
+JobController#jobList()
 to {GET [/job]}: There is already 'jobController' bean method
-com.life.task.controller.JobController#cron(String) mapped.
+JobController#cron(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
@@ -62,11 +62,11 @@ com.life.task.controller.JobController#cron(String) mapped.
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobController' method 
-com.life.task.controller.JobController#jobList()
+JobController#jobList()
 to {GET [/job]}: There is already 'jobController' bean method
-com.life.task.controller.JobController#cron(String) mapped.
+JobController#cron(String) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328)
@@ -84,9 +84,9 @@ com.life.task.controller.JobController#cron(String) mapped.
 	... 17 common frames omitted
 2021-05-18 20:42:24,047 [main] ERROR o.s.boot.SpringApplication -[SpringApplication.java:871]- Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'roleController' method 
-com.life.task.controller.RoleController#roleById(String)
+RoleController#roleById(String)
 to {GET [/role]}: There is already 'roleController' bean method
-com.life.task.controller.RoleController#roleList() mapped.
+RoleController#roleList() mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
@@ -104,11 +104,11 @@ com.life.task.controller.RoleController#roleList() mapped.
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'roleController' method 
-com.life.task.controller.RoleController#roleById(String)
+RoleController#roleById(String)
 to {GET [/role]}: There is already 'roleController' bean method
-com.life.task.controller.RoleController#roleList() mapped.
+RoleController#roleList() mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328)
@@ -126,9 +126,9 @@ com.life.task.controller.RoleController#roleList() mapped.
 	... 17 common frames omitted
 2021-05-18 20:42:44,081 [main] ERROR o.s.boot.SpringApplication -[SpringApplication.java:871]- Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
-com.life.task.controller.UserController#changeUser()
+UserController#changeUser()
 to {PUT [/user]}: There is already 'userController' bean method
-com.life.task.controller.UserController#user(String) mapped.
+UserController#user(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
@@ -146,11 +146,11 @@ com.life.task.controller.UserController#user(String) mapped.
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
-com.life.task.controller.UserController#changeUser()
+UserController#changeUser()
 to {PUT [/user]}: There is already 'userController' bean method
-com.life.task.controller.UserController#user(String) mapped.
+UserController#user(String) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328)
@@ -168,9 +168,9 @@ com.life.task.controller.UserController#user(String) mapped.
 	... 17 common frames omitted
 2021-05-18 20:43:20,237 [main] ERROR o.s.boot.SpringApplication -[SpringApplication.java:871]- Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
-com.life.task.controller.UserController#changeUser()
+UserController#changeUser()
 to {PUT [/user]}: There is already 'userController' bean method
-com.life.task.controller.UserController#user(String) mapped.
+UserController#user(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
@@ -188,11 +188,11 @@ com.life.task.controller.UserController#user(String) mapped.
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
-com.life.task.controller.UserController#changeUser()
+UserController#changeUser()
 to {PUT [/user]}: There is already 'userController' bean method
-com.life.task.controller.UserController#user(String) mapped.
+UserController#user(String) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328)

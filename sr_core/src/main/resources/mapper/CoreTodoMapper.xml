@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sr.core.mapper.CoreTodoMapper">
+
+    <resultMap type="com.sr.core.pojo.CoreTodo" id="CoreTodoResult">
+        <result property="id" column="id"/>
+        <result property="isFinish" column="is_finish"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="taskId" column="task_id"/>
+        <result property="userId" column="user_id"/>
+    </resultMap>
+
+    <sql id="where">
+        <where>
+            <if test="params.id != null">
+                and id = #{params.id}
+            </if>
+            <if test="params.isFinish != null">
+                and is_finish = #{params.isFinish}
+            </if>
+            <if test="params.startTime != null">
+                and start_time = #{params.startTime}
+            </if>
+            <if test="params.endTime != null">
+                and end_time = #{params.endTime}
+            </if>
+            <if test="params.taskId != null">
+                and task_id = #{params.taskId}
+            </if>
+            <if test="params.userId != null">
+                and user_id = #{params.userId}
+            </if>
+        </where>
+    </sql>
+
+    <insert id="insert"
+            useGeneratedKeys="true"
+            keyProperty="id">
+        insert into core_todo
+            (id, is_finish, start_time, end_time, task_id, user_id)
+        values (#{id}, #{isFinish}, #{startTime}, #{endTime}, #{taskId}, #{userId})
+    </insert>
+
+    <insert id="insertBatch"
+            parameterType="java.util.List">
+        insert into core_todo
+        (id,is_finish,start_time,end_time,task_id,user_id)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{coreTodo.id},
+            #{coreTodo.isFinish},
+            #{coreTodo.startTime},
+            #{coreTodo.endTime},
+            #{coreTodo.taskId},
+            #{coreTodo.userId}
+            )
+        </foreach>
+    </insert>
+
+    <delete id="delete">
+        delete
+        from core_todo
+        where id = #{id}
+    </delete>
+
+    <update id="update">
+        update core_todo
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="isFinish != null">
+                is_finish = #{isFinish},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="taskId != null">
+                task_id = #{taskId},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectByParams"
+            resultType="com.sr.core.pojo.CoreTodo"
+            resultMap="CoreTodoResult">
+        select id, is_finish, start_time, end_time, task_id
+        from `core_todo`
+        <include refid="where"/>
+    </select>
+
+    <select id="count"
+            resultType="java.lang.Integer">
+        select count(1)
+        from core_todo t
+        left join sys_user u
+        on u.id = t.user_id
+        <include refid="where"/>
+    </select>
+
+    <select id="selectByParamsWithPage" resultType="com.sr.core.pojo.CoreTodo">
+        select id, is_finish, start_time, end_time, task_id, user_id
+        from core_todo t
+        <include refid="where"/>
+        limit #{offset}, #{pageSize}
+    </select>
+
+</mapper>

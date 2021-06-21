@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sr.core.mapper.SysRolePermMapper">
+
+    <resultMap type="com.sr.core.pojo.SysRolePerm" id="SysRolePermResult">
+        <result property="roleId" column="role_id"/>
+        <result property="permId" column="perm_id"/>
+    </resultMap>
+
+    <insert id="insertBatch"
+            parameterType="java.util.List">
+        insert into `sys_role_perm`
+        (`role_id`,`perm_id`)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{sysRolePerm.roleId},
+            #{sysRolePerm.permId}
+            )
+        </foreach>
+
+    </insert>
+
+</mapper>

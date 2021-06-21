@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sr.core.mapper.CoreCategoryMapper">
+
+    <resultMap type="com.sr.core.pojo.CoreCategory" id="CoreCategoryResult">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="name" column="name"/>
+        <result property="description" column="description"/>
+        <result property="type" column="type"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="delete" column="is_delete"/>
+    </resultMap>
+
+    <sql id="where">
+        <where>
+            <if test="params.id != null">
+                and id = #{params.id}
+            </if>
+            <if test="params.userId != null">
+                and user_id in (#{params.userId}, -1)
+            </if>
+            <if test="params.name != null">
+                and name = #{params.name}
+            </if>
+            <if test="params.description != null">
+                and description = #{params.description}
+            </if>
+            <if test="params.type != null">
+                and type = #{params.type}
+            </if>
+            <if test="params.createTime != null">
+                and create_time = #{params.createTime}
+            </if>
+            <if test="params.updateTime != null">
+                and update_time = #{params.updateTime}
+            </if>
+            <if test="params.isDelete != null">
+                and is_delete = #{params.delete}
+            </if>
+        </where>
+    </sql>
+
+    <insert id="insert"
+            useGeneratedKeys="true"
+            keyProperty="id">
+        insert into core_category
+        (id, user_id, name, description, type, create_time, update_time, is_delete)
+        values (#id, #userId, #name, #description, #type, #createTime, #updateTime, #isDelete)
+    </insert>
+
+    <insert id="insertBatch"
+            parameterType="java.util.List">
+        insert into core_category
+        (id,user_id,name,description,type,create_time,update_time,is_delete)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{coreCategory.id},
+            #{coreCategory.userId},
+            #{coreCategory.name},
+            #{coreCategory.description},
+            #{coreCategory.type},
+            #{coreCategory.createTime},
+            #{coreCategory.updateTime},
+            #{coreCategory.isDelete}
+            )
+        </foreach>
+    </insert>
+
+    <delete id="delete">
+        delete from core_category
+        <include refid="where"/>
+    </delete>
+
+    <update id="update">
+        update `core_task`
+        <set>
+            <if test="id != null">
+                id = #{params.id},
+            </if>
+            <if test="userId != null">
+                user_id = #{params.userId},
+            </if>
+            <if test="name != null">
+                name = #{params.name},
+            </if>
+            <if test="description != null">
+                description = #{params.description},
+            </if>
+            <if test="type != null">
+                type = #{params.type},
+            </if>
+            <if test="createTime != null">
+                create_time = #{params.createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{params.updateTime},
+            </if>
+            <if test="isDelete != null">
+                is_delete = #{params.isDelete},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectByParams"
+            resultType="com.sr.core.pojo.CoreCategory"
+            resultMap="CoreCategoryResult">
+        select id, name, description, type, create_time, update_time, is_delete
+        from `core_category`
+        <include refid="where"/>
+        order by order_num
+    </select>
+
+    <select id="count"
+            resultType="java.lang.Integer">
+        select count(1)
+        from core_category t
+        left join sys_user u
+        on u.id = t.user_id
+        <include refid="where"/>
+    </select>
+
+    <select id="selectByParamsWithPage" resultType="com.sr.core.pojo.CoreCategory">
+        select id,user_id,name,description,type,create_time,update_time,is_delete
+        from core_category t
+        <include refid="where"/>
+        limit #{offset}, #{pageSize}
+    </select>
+
+</mapper>

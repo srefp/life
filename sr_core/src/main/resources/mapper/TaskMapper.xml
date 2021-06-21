@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sr.core.mapper.TaskMapper">
+
+    <resultMap type="com.sr.core.pojo.Task" id="TaskResult">
+        <result property="id" column="id"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="categoryId" column="category_id"/>
+        <result property="content" column="content"/>
+        <result property="priority" column="priority"/>
+        <result property="orderNum" column="order_num"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="finish" column="is_finish"/>
+        <result property="delete" column="is_delete"/>
+        <result property="userId" column="user_id"/>
+    </resultMap>
+
+    <sql id="where">
+        <where>
+            <if test="params.id != null">
+                and id = #{params.id}
+            </if>
+            <if test="params.parentId != null">
+                and parent_id = #{params.parentId}
+            </if>
+            <if test="params.categoryId != null">
+                and category_id = #{params.categoryId}
+            </if>
+            <if test="params.content != null">
+                and content = #{params.content}
+            </if>
+            <if test="params.priority != null">
+                and priority = #{params.priority}
+            </if>
+            <if test="params.orderNum != null">
+                and order_num = #{params.orderNum}
+            </if>
+            <if test="params.startTime != null">
+                and start_time = #{params.startTime}
+            </if>
+            <if test="params.endTime != null">
+                and to_days(end_time) = to_days(#{params.endTime})
+            </if>
+            <if test="params.createTime != null">
+                and create_time = #{params.createTime}
+            </if>
+            <if test="params.updateTime != null">
+                and update_time = #{params.updateTime}
+            </if>
+            <if test="params.finish != null">
+                and is_finish = #{params.finish}
+            </if>
+            <if test="params.delete != null">
+                and is_delete = #{params.delete}
+            </if>
+            <if test="params.userId != null">
+                and user_id = #{params.userId}
+            </if>
+        </where>
+    </sql>
+
+    <insert id="insertBatch"
+            parameterType="java.util.List">
+        insert into `core_task`
+        (`id`,`parent_id`,`category_id`,`content`,`priority`,`order_num`,`start_time`,`end_time`,`create_time`,`update_time`,`is_delete`,`user_id`)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.id},
+            #{item.parentId},
+            #{item.categoryId},
+            #{item.content},
+            #{item.priority},
+            #{item.orderNum},
+            #{item.startTime},
+            #{item.endTime},
+            #{item.createTime},
+            #{item.updateTime},
+            #{item.delete},
+            #{item.userId}
+            )
+        </foreach>
+
+    </insert>
+
+    <insert id="insertOne"
+            useGeneratedKeys="true"
+            keyProperty="id">
+        insert into core_task
+        (parent_id, category_id, content, order_num, start_time, end_time, create_time, update_time, user_id)
+        values (#{parentId}, #{categoryId}, #{content},
+                (select max(order_num) from core_task t where user_id = #{userId}) + 1,
+                #{startTime}, #{endTime}, now(), now(), #{userId})
+    </insert>
+
+    <select id="selectByParams" resultType="com.sr.core.pojo.Task"
+            resultMap="TaskResult">
+        select `id`,
+        `parent_id`,
+        `category_id`,
+        `content`,
+        `priority`,
+        `order_num`,
+        `start_time`,
+        `end_time`,
+        `create_time`,
+        `update_time`,
+        `is_finish`,
+        `is_delete`,
+        `user_id`
+        from `core_task`
+        <include refid="where"/>
+        order by order_num
+    </select>
+
+    <update id="update">
+        update `core_task`
+        <set>
+            <if test="parentId != null">
+                `parent_id` = #{parentId},
+            </if>
+            <if test="categoryId != null">
+                `category_id` = #{categoryId},
+            </if>
+            <if test="content != null">
+                `content` = #{content},
+            </if>
+            <if test="priority != null">
+                `priority` = #{priority},
+            </if>
+            <if test="updateTime != null">
+                `update_time` = #{updateTime},
+            </if>
+            <if test="finish != null">
+                `is_finish` = #{finish},
+            </if>
+            <if test="delete != null">
+                `is_delete` = #{delete},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectRecentSevenDays" resultType="com.sr.core.pojo.Task" resultMap="TaskResult">
+        select id, parent_id, category_id, content, priority, order_num, start_time, end_time, create_time, update_time, is_finish
+        from core_task
+        where user_id = #{userId}
+        and date_sub(curdate(), interval 7 day) &lt;= date(end_time)
+        and is_delete = false
+        order by order_num
+    </select>
+
+</mapper>

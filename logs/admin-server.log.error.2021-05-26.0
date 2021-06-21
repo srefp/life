@@ -2,7 +2,7 @@
 2021-05-26 20:28:24,614 [http-nio-9000-exec-1] ERROR adminLogger -[TokenServiceJWTImpl.java:149]- Signed Claims JWSs are not supported.
 2021-05-26 20:28:24,657 [http-nio-9000-exec-1] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 java.lang.NullPointerException: null
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:95)
+	at LoginController.getInfo(LoginController.java:95)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -48,7 +48,7 @@ java.lang.NullPointerException: null
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -98,8 +98,8 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748)
 2021-05-26 20:31:01,612 [http-nio-9000-exec-1] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -109,8 +109,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -156,7 +156,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -205,7 +205,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
 	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1432)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1062)
@@ -237,8 +237,8 @@ Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot c
 	... 103 common frames omitted
 2021-05-26 20:32:43,258 [http-nio-9000-exec-1] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -248,8 +248,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -295,7 +295,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -344,7 +344,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
 	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1432)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1062)
@@ -376,8 +376,8 @@ Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot c
 	... 103 common frames omitted
 2021-05-26 20:36:03,805 [http-nio-9000-exec-1] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -387,8 +387,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -434,7 +434,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -483,7 +483,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
 	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1432)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1062)
@@ -515,8 +515,8 @@ Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot c
 	... 103 common frames omitted
 2021-05-26 20:37:09,337 [http-nio-9000-exec-1] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -526,8 +526,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -573,7 +573,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -622,7 +622,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1092] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
 	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1432)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1062)
@@ -655,8 +655,8 @@ Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot c
 	... 103 common frames omitted
 2021-05-26 20:37:36,057 [http-nio-9000-exec-1] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1014] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1014] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1014] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1014] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -666,8 +666,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -713,7 +713,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -762,7 +762,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1014] (through reference chain: com.life.task.common.LoginUser["authorities"]->java.util.HashSet[0])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 1014] (through reference chain: LoginUser["authorities"]->java.util.HashSet[0])
 	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
 	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1432)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1062)
@@ -790,8 +790,8 @@ Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot c
 	... 103 common frames omitted
 2021-05-26 20:37:55,565 [http-nio-9000-exec-1] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot deserialize instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` out of START_ARRAY token
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 991] (through reference chain: com.life.task.common.LoginUser["authorities"]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` out of START_ARRAY token
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 991] (through reference chain: com.life.task.common.LoginUser["authorities"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 991] (through reference chain: LoginUser["authorities"]); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` out of START_ARRAY token
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 991] (through reference chain: LoginUser["authorities"])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -801,8 +801,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -848,7 +848,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -897,7 +897,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `org.springframework.security.core.authority.SimpleGrantedAuthority` out of START_ARRAY token
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 991] (through reference chain: com.life.task.common.LoginUser["authorities"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-07 18:05:03"],"updateTime":["java.util.Date","2021-05-07 18:05:08"],"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天","parentId":0,"orderN"[truncated 703 bytes]; line: 1, column: 991] (through reference chain: LoginUser["authorities"])
 	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
 	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1445)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1219)
@@ -920,7 +920,7 @@ Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot d
 	... 103 common frames omitted
 2021-05-26 20:40:56,420 [http-nio-9000-exec-3] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 java.lang.NullPointerException: null
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:95)
+	at LoginController.getInfo(LoginController.java:95)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -966,7 +966,7 @@ java.lang.NullPointerException: null
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -1016,7 +1016,7 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748)
 2021-05-26 20:40:57,970 [http-nio-9000-exec-4] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 java.lang.NullPointerException: null
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:95)
+	at LoginController.getInfo(LoginController.java:95)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1062,7 +1062,7 @@ java.lang.NullPointerException: null
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -1112,8 +1112,8 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748)
 2021-05-26 20:44:19,419 [http-nio-9000-exec-9] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"]); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"]); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -1123,8 +1123,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1170,7 +1170,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -1219,7 +1219,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"])
 	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
 	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1679)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:935)
@@ -1244,8 +1244,8 @@ Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot des
 	... 103 common frames omitted
 2021-05-26 20:44:44,480 [http-nio-9000-exec-10] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"]); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"]); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -1255,8 +1255,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1302,7 +1302,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -1351,7 +1351,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"])
 	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
 	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1679)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:935)
@@ -1376,8 +1376,8 @@ Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot des
 	... 103 common frames omitted
 2021-05-26 20:45:16,874 [http-nio-9000-exec-1] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"]); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"]); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -1387,8 +1387,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1434,7 +1434,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -1483,7 +1483,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"])
 	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
 	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1679)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:935)
@@ -1508,8 +1508,8 @@ Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot des
 	... 103 common frames omitted
 2021-05-26 20:45:17,743 [http-nio-9000-exec-2] ERROR adminLogger -[ExceptionHandlerAdvice.java:47]- 系统异常
 org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"]); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"]); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"])
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:152)
 	at org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer.deserialize(GenericJackson2JsonRedisSerializer.java:130)
 	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
@@ -1519,8 +1519,8 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
 	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
 	at org.springframework.data.redis.core.DefaultBoundValueOperations.get(DefaultBoundValueOperations.java:50)
-	at com.life.task.service.TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
-	at com.life.task.controller.LoginController.getInfo(LoginController.java:94)
+	at TokenServiceJWTImpl.getLoginUser(TokenServiceJWTImpl.java:106)
+	at LoginController.getInfo(LoginController.java:94)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1566,7 +1566,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at com.life.task.filter.TokenFilter.doFilterInternal(TokenFilter.java:50)
+	at TokenFilter.doFilterInternal(TokenFilter.java:50)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
@@ -1615,7 +1615,7 @@ org.springframework.data.redis.serializer.SerializationException: Could not read
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2021-05-0718:05:03": expected format "yyyy-MM-dd HH:mm:ss"
- at [Source: (byte[])"{"@class":"com.life.task.common.LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"com.life.task.pojo.SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: com.life.task.common.LoginUser["createTime"])
+ at [Source: (byte[])"{"@class":"LoginUser","id":1,"username":"tom","telephone":"18956580434","password":"$2a$10$/b8eD4bkJ/l1LPUPd7RTWegtUYdajRMpIPF8z/VWz7b90ov7oXPEG","email":"1903994095@qq.com","birthday":null,"sex":null,"headPortrait":null,"status":false,"delete":false,"createTime":["java.util.Date","2021-05-0718:05:03"],"updateTime":["java.util.Date","2021-05-0718:05:08"],"expireSeconds":7200,"permissions":["java.util.ArrayList",[{"@class":"SysPerm","id":1,"name":"今天",""[truncated 480 bytes]; line: 1, column: 304] (through reference chain: LoginUser["createTime"])
 	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
 	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1679)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:935)

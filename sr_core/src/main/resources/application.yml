@@ -1,0 +1,58 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:mysql://rm-bp13xovzz1737d05nmo.mysql.rds.aliyuncs.com:3306/sr?useSSL=true&serverTimezone=GMT%2B8&characterEncoding=UTF-8
+    username: testfault
+    password: 5Bian@lmxxx
+    continue-on-error: true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  jooq:
+    sql-dialect: mysql
+  # 邮箱配置
+  mail:
+    # 163
+    host: smtp.163.com
+    port:
+    username: life_app_server@163.com
+    password: T2iYbY5Rij-vV9K
+    protocol: smtp
+    default-encoding: UTF-8
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.socketFactory.port: 465
+      mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
+      mail.smtp.socketFactory.fallback: false
+
+# mybatis配置mapper位置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.sr.core.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 自定义配置
+token:
+  expire-seconds: 720000
+  jwt-secret: (L)_$^684^%$(K)_++.xdf(J)
+
+# 日志
+logging:
+  config: classpath:logback-admin.xml
+log:
+  level:
+    root: info
+    my: debug
+  file: logs/admin-server.log
+  max-size: 30MB
+
+login:
+  captcha-type: math

@@ -1,8 +1,8 @@
 2021-05-19 00:29:55,755 [main] ERROR o.s.boot.SpringApplication -[SpringApplication.java:871]- Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'permController' method 
-com.life.task.controller.PermController#permList()
+PermController#permList()
 to {GET [/perm]}: There is already 'permController' bean method
-com.life.task.controller.PermController#perm(String) mapped.
+PermController#perm(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
@@ -20,11 +20,11 @@ com.life.task.controller.PermController#perm(String) mapped.
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'permController' method 
-com.life.task.controller.PermController#permList()
+PermController#permList()
 to {GET [/perm]}: There is already 'permController' bean method
-com.life.task.controller.PermController#perm(String) mapped.
+PermController#perm(String) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328)
@@ -48,7 +48,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field authenticationManager in com.life.task.service.LoginService required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
+Field authenticationManager in LoginService required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -66,7 +66,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field redisCache in com.life.task.service.LoginService required a bean of type 'org.springframework.data.redis.cache.RedisCache' that could not be found.
+Field redisCache in LoginService required a bean of type 'org.springframework.data.redis.cache.RedisCache' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -99,7 +99,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "{token.expire-seconds}"
 	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:79)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1328)
@@ -140,7 +140,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "{token.expire-seconds}"
 	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:79)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1328)
@@ -182,7 +182,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalStateException: An incomplete mapping was found for []. Try completing it with something like requestUrls().<something>.hasRole('USER')
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
@@ -232,7 +232,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
+	at TaskApplication.main(TaskApplication.java:15)
 Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalStateException: An incomplete mapping was found for []. Try completing it with something like requestUrls().<something>.hasRole('USER')
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
@@ -319,11 +319,11 @@ org.springframework.security.authentication.InternalAuthenticationServiceExcepti
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: org.springframework.security.authentication.AuthenticationCredentialsNotFoundException: 用户名不存在
-	at com.life.task.service.UserDetailsServiceImpl.loadUserByUsername(UserDetailsServiceImpl.java:35)
+	at UserDetailsServiceImpl.loadUserByUsername(UserDetailsServiceImpl.java:35)
 	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:93)
 	... 57 common frames omitted
 2021-05-19 16:53:52,241 [main] ERROR o.s.boot.SpringApplication -[SpringApplication.java:871]- Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.life.task.TaskApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'exceptionHandlerAdvice' for bean class [com.life.task.handler.ExceptionHandlerAdvice] conflicts with existing, non-compatible bean definition of same name and class [com.life.task.advice.ExceptionHandlerAdvice]
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [TaskApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'exceptionHandlerAdvice' for bean class [com.life.task.handler.ExceptionHandlerAdvice] conflicts with existing, non-compatible bean definition of same name and class [ExceptionHandlerAdvice]
 	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:189)
 	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
 	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
@@ -338,8 +338,8 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
-	at com.life.task.TaskApplication.main(TaskApplication.java:15)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'exceptionHandlerAdvice' for bean class [com.life.task.handler.ExceptionHandlerAdvice] conflicts with existing, non-compatible bean definition of same name and class [com.life.task.advice.ExceptionHandlerAdvice]
+	at TaskApplication.main(TaskApplication.java:15)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'exceptionHandlerAdvice' for bean class [com.life.task.handler.ExceptionHandlerAdvice] conflicts with existing, non-compatible bean definition of same name and class [ExceptionHandlerAdvice]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)

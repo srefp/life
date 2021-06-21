@@ -1,0 +1,53 @@
+{
+  "groups": [
+    {
+      "name": "log",
+      "type": "com.sr.core.config.properties.LogConfigurationProperties",
+      "sourceType": "com.sr.core.config.properties.LogConfigurationProperties"
+    },
+    {
+      "name": "log.level",
+      "type": "com.sr.core.config.properties.LogConfigurationProperties$Level",
+      "sourceType": "com.sr.core.config.properties.LogConfigurationProperties",
+      "sourceMethod": "getLevel()"
+    },
+    {
+      "name": "login",
+      "type": "com.sr.core.config.properties.LoginConfigurationProperties",
+      "sourceType": "com.sr.core.config.properties.LoginConfigurationProperties"
+    },
+    {
+      "name": "token",
+      "type": "com.sr.core.config.properties.TokenConfigurationProperties",
+      "sourceType": "com.sr.core.config.properties.TokenConfigurationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "log.file",
+      "type": "java.lang.String",
+      "sourceType": "com.sr.core.config.properties.LogConfigurationProperties"
+    },
+    {
+      "name": "log.max-size",
+      "type": "java.lang.String",
+      "sourceType": "com.sr.core.config.properties.LogConfigurationProperties"
+    },
+    {
+      "name": "login.captcha-type",
+      "type": "java.lang.String",
+      "sourceType": "com.sr.core.config.properties.LoginConfigurationProperties"
+    },
+    {
+      "name": "token.expire-seconds",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sr.core.config.properties.TokenConfigurationProperties"
+    },
+    {
+      "name": "token.jwt-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.sr.core.config.properties.TokenConfigurationProperties"
+    }
+  ],
+  "hints": []
+}
